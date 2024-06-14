@@ -3371,11 +3371,11 @@
    */
   #define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD       1  // [mm/s]
+  #define X_HYBRID_THRESHOLD       30  // [mm/s]
   //#define X2_HYBRID_THRESHOLD    100
-  #define Y_HYBRID_THRESHOLD       1
+  #define Y_HYBRID_THRESHOLD       30
   //#define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       1
+  #define Z_HYBRID_THRESHOLD       30
   //#define Z2_HYBRID_THRESHOLD      3
   //#define Z3_HYBRID_THRESHOLD      3
   //#define Z4_HYBRID_THRESHOLD      3
@@ -3385,7 +3385,7 @@
   //#define U_HYBRID_THRESHOLD       3  // [mm/s]
   //#define V_HYBRID_THRESHOLD       3
   //#define W_HYBRID_THRESHOLD       3
-  #define E0_HYBRID_THRESHOLD      1
+  #define E0_HYBRID_THRESHOLD      30
   //#define E1_HYBRID_THRESHOLD     30
   //#define E2_HYBRID_THRESHOLD     30
   //#define E3_HYBRID_THRESHOLD     30
@@ -3454,7 +3454,7 @@
    *
    * Values from 0..1023, -1 to disable homing phase for that axis.
    */
-   //#define TMC_HOME_PHASE { 896, 896, 896 }
+   #define TMC_HOME_PHASE { 896, 896, -1 }
 
   /**
    * Step on both rising and falling edge signals (as with a square wave).
