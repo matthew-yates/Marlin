@@ -1243,7 +1243,7 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 800, 800, 800, 4704 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 792, 793, 793, 4704 }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1255,11 +1255,11 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 10, 10, 10, 2 }
+#define DEFAULT_MAX_FEEDRATE          { 5, 5, 5, 0.7 }
 
 #define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 20, 20, 20, 4 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 10, 10, 10, 1 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1594,7 +1594,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, -15, -1.5 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, -15, -4.25 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1762,7 +1762,7 @@
 // @section motion
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
+#define INVERT_X_DIR true
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR true
 //#define INVERT_I_DIR false
@@ -1775,7 +1775,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 //#define INVERT_E1_DIR false
 //#define INVERT_E2_DIR false
 //#define INVERT_E3_DIR false
@@ -1835,7 +1835,7 @@
 
 // The size of the printable area
 #define X_BED_SIZE 220
-#define Y_BED_SIZE 220
+#define Y_BED_SIZE 200
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1843,7 +1843,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 60
+#define Z_MAX_POS 70
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
